@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: #fff;
+  color: #333;
+}
+
+header {
+  background: #800000;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+
+.logo {
+  width: 120px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #800000;
+}
+
+.nav-logo {
+  width: 80px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.collections h1 {
+  text-align: center;
+  color: #800000;
+  margin-bottom: 40px;
+}
+
+.collection-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  text-align: center;
+  padding: 15px;
+  background: #fff;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  color: #800000;
+  margin-top: 10px;
+}
+
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+h2 {
+  color: #800000;
+}
+
+.gallery .items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid #d4af37;
+}
+
+.contact a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+  background: #800000;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+footer {
+  background: #800000;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
