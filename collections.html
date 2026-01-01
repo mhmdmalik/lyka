@@ -5,6 +5,13 @@
   <title>Lyka | Collections</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<div id="lightbox">
+  <span class="close-btn" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img">
+</div>
+
+<script src="lightbox.js"></script>
+
 <body>
 
 <nav>
@@ -17,26 +24,26 @@
 
 <section class="collections">
   <h1>Our Collections</h1>
-
-  <div class="collection-grid">
-    <div class="card">
-      <img src="images/rings.jpg">
-      <h3>Rings</h3>
-      <p>Elegant designs for every occasion</p>
-    </div>
-
-    <div class="card">
-      <img src="images/necklaces.jpg">
-      <h3>Necklaces</h3>
-      <p>Timeless beauty with modern touch</p>
-    </div>
-
-    <div class="card">
-      <img src="images/earrings.jpg">
-      <h3>Earrings</h3>
-      <p>Grace that completes your look</p>
-    </div>
+ <div class="collection-grid">
+   <div class="card">
+  <img src="images/rings.jpeg" onclick="openLightbox(this.src)">
+  <h3>Rings</h3>
+  <p>Elegant designs for every occasion</p>
   </div>
+
+  <div class="card">
+  <img src="images/chain.jpeg" onclick="openLightbox(this.src)">
+  <h3>Chain</h3>
+  <p>Elegant designs for every occasion</p>
+  </div>
+
+
+  <div class="card">
+  <img src="images/earrings.jpeg" onclick="openLightbox(this.src)">
+  <h3>Earrings</h3>
+  <p>Elegant designs for every occasion</p>
+  </div>
+ </div>
 </section>
 
 <footer>
