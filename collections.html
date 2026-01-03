@@ -5,14 +5,13 @@
   <title>Lyka | Collections</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
 <div id="lightbox">
   <span class="close-btn" onclick="closeLightbox()">×</span>
+  <button class="nav-btn prev-btn" onclick="prevImage()">◀</button>
   <img id="lightbox-img">
+  <button class="nav-btn next-btn" onclick="nextImage()">▶</button>
 </div>
-
-<script src="lightbox.js"></script>
-
-<body>
 
 <nav>
   <img src="images/logo.png" class="nav-logo">
@@ -24,31 +23,31 @@
 
 <section class="collections">
   <h1>Our Collections</h1>
- <div class="collection-grid">
-   <div class="card">
-  <img src="images/rings.jpeg" onclick="openLightbox(this.src)">
-  <h3>Rings</h3>
-  <p>Elegant designs for every occasion</p>
-  </div>
+  <div class="collection-grid">
+    <div class="card">
+      <img src="images/rings.jpeg" onclick="openLightbox('rings')">
+      <h3>Rings</h3>
+      <p>Elegant designs for every occasion</p>
+    </div>
 
-  <div class="card">
-  <img src="images/chain.jpeg" onclick="openLightbox(this.src)">
-  <h3>Chain</h3>
-  <p>Elegant designs for every occasion</p>
-  </div>
+    <div class="card">
+      <img src="images/chain.jpeg" onclick="openLightbox('chains')">
+      <h3>Chain</h3>
+      <p>Elegant designs for every occasion</p>
+    </div>
 
-
-  <div class="card">
-  <img src="images/earrings.jpeg" onclick="openLightbox(this.src)">
-  <h3>Earrings</h3>
-  <p>Elegant designs for every occasion</p>
+    <div class="card">
+      <img src="images/earrings.jpeg" onclick="openLightbox('earrings')">
+      <h3>Earrings</h3>
+      <p>Elegant designs for every occasion</p>
+    </div>
   </div>
- </div>
 </section>
 
 <footer>
   © 2025 Lyka Jewelry
 </footer>
 
+<script src="lightbox.js"></script>
 </body>
 </html>
