@@ -72,7 +72,7 @@ No backend or database — purely static, blazing fast, and easy to host.
 
 ![Demo](images/ss1.png)
 ![Demo](images/ss2.png)
-![Demo](images/ss3png)
+![Demo](images/ss3.png)
 ---
 
 ## 🧠 What I Learned
