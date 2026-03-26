@@ -1,8 +1,3 @@
-Here’s a **ready-to-use README** for your GitHub repo **“lyka”** — a *simple website for a home-based jewelry brand* based on the info from the repo.([GitHub][1])
-
----
-
-```md
 # Lyka – Jewelry Brand Website 💎
 
 **Lyka** is a clean and responsive website built for a home-based jewelry brand. It showcases jewelry collections with elegant UI and lightweight design, perfect for small businesses looking to display products online.
