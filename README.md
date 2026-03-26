@@ -52,7 +52,6 @@ No backend or database — purely static, blazing fast, and easy to host.
 1. Clone the repo:
    ```bash
    git clone https://github.com/mhmdmalik/lyka.git
-````
 
 2. Navigate to the folder:
 
