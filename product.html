@@ -4,19 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lyka Collections | Shop Rings, Chains and Earrings</title>
-  <meta name="description" content="Browse Lyka's jewelry collections with searchable and filterable rings, chains, and earrings.">
+  <title>Lyka Product</title>
+  <meta name="description" content="View Lyka product details, gallery images, styling notes, and price information.">
   <meta name="robots" content="index,follow">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Lyka Collections | Shop Rings, Chains and Earrings">
-  <meta property="og:description" content="Filter Lyka's jewelry collections and open product detail pages with gallery images, descriptions, and add-to-cart actions.">
-  <meta property="og:url" content="https://mhmdmalik.github.io/lyka/collections.html">
-  <meta property="og:image" content="https://mhmdmalik.github.io/lyka/images/earrings.jpeg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Lyka Collections | Shop Rings, Chains and Earrings">
-  <meta name="twitter:description" content="Explore Lyka's jewelry categories with product filtering, local cart storage, and a keyboard-friendly lightbox.">
-  <meta name="twitter:image" content="https://mhmdmalik.github.io/lyka/images/earrings.jpeg">
-  <link rel="canonical" href="https://mhmdmalik.github.io/lyka/collections.html">
+  <link rel="canonical" href="https://mhmdmalik.github.io/lyka/product.html">
   <link rel="icon" href="images/8.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +23,7 @@
           <img src="images/logo.png" alt="Lyka Jewelry logo" width="56" height="56">
           <span class="brand-mark__text">
             <strong>LYKA</strong>
-            <span>Jewelry collections</span>
+            <span>Product details</span>
           </span>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
@@ -44,18 +35,10 @@
         <nav class="site-nav" id="site-nav" aria-label="Primary">
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
-              <a href="collections.html" aria-current="page">Shop</a>
-              <div class="dropdown-panel" role="menu" aria-label="Shop categories">
-                <a href="collections.html?category=rings">Rings</a>
-                <a href="collections.html?category=chains">Chains</a>
-                <a href="collections.html?category=earrings">Earrings</a>
-              </div>
-            </li>
+            <li><a href="collections.html">Shop</a></li>
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
           <div class="nav-actions">
-            <a class="button-secondary" href="product.html?id=lyka-chains">View featured product</a>
             <button class="button-secondary cart-trigger" type="button" data-open-cart aria-controls="cart-drawer">
               Cart
               <span class="cart-count" data-cart-count>0</span>
@@ -65,55 +48,37 @@
       </div>
     </header>
 
-    <main id="main-content">
-      <section class="collections-head">
-        <div class="container">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span aria-hidden="true">/</span>
-            <span>Collections</span>
-          </nav>
-          <div class="section-heading">
-            <span class="eyebrow">Shop the catalog</span>
-            <h1>Search and filter the Lyka collection.</h1>
-          </div>
-          <div class="collections-toolbar">
-            <div>
-              <label class="sr-only" for="collection-search">Search products</label>
-              <input class="search-field" id="collection-search" type="search" placeholder="Search by product name, category or keyword" data-collection-search>
-            </div>
-            <div class="filter-pills" data-filter-group aria-label="Filter products by category">
-              <button class="filter-pill is-active" type="button" data-filter="all" aria-pressed="true">All</button>
-              <button class="filter-pill" type="button" data-filter="rings" aria-pressed="false">Rings</button>
-              <button class="filter-pill" type="button" data-filter="chains" aria-pressed="false">Chains</button>
-              <button class="filter-pill" type="button" data-filter="earrings" aria-pressed="false">Earrings</button>
-            </div>
-          </div>
-          <div class="product-grid" data-product-grid></div>
-          <p class="empty-state" data-empty-state hidden>No products match this filter yet. Try another category or search phrase.</p>
-        </div>
-      </section>
+    <main id="main-content" class="detail-section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="collections.html">Collections</a>
+          <span aria-hidden="true">/</span>
+          <span data-product-breadcrumb>Product</span>
+        </nav>
+        <div class="detail-layout" data-product-detail></div>
+      </div>
     </main>
 
     <footer class="footer">
       <div class="container footer-grid">
         <article class="footer-card">
-          <h3>Shop with confidence</h3>
-          <p class="footer-note">In lyka, we guarantee you that all our products are sourced and crafted with the highest quality materials. All items in the shop are anti-tarnish, so the colour will not fade</p>
+          <h3>Product support</h3>
+          <p class="footer-note">Need a gift recommendation, quantity update, or custom packaging request? Reach out through the inquiry form on the home page.</p>
         </article>
         <article class="footer-card">
-          <h3>Need help?</h3>
+          <h3>Continue browsing</h3>
           <div class="footer-links">
-            <a href="index.html#contact">Contact form</a>
-            <a href="https://www.instagram.com/lyka.jewels/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="collections.html">All products</a>
+            <a href="collections.html?category=chains">Chains</a>
+            <a href="collections.html?category=earrings">Earrings</a>
           </div>
         </article>
         <article class="footer-card">
-          <h3>Browse</h3>
+          <h3>Follow Lyka</h3>
           <div class="footer-links">
-            <a href="collections.html?category=rings">Rings</a>
-            <a href="collections.html?category=chains">Chains</a>
-            <a href="collections.html?category=earrings">Earrings</a>
+            <a href="https://www.instagram.com/lyka.jewels/" target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </article>
       </div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lyka Admin Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  <main class="admin-auth-shell">
+    <section class="admin-auth-card">
+      <a class="brand-mark" href="index.html" aria-label="Back to Lyka store">
+        <img src="images/logo.png" alt="Lyka Jewelry logo" width="56" height="56">
+        <span class="brand-mark__text">
+          <strong>LYKA</strong>
+          <span>Admin access</span>
+        </span>
+      </a>
+      <div class="section-heading">
+        <h1>Admin login</h1>
+        <p>Sign in to manage products, pricing, collections, and images.</p>
+      </div>
+      <form class="admin-form" data-admin-login>
+        <div class="form-field">
+          <label for="admin-email">Username / Email</label>
+          <input id="admin-email" name="email" type="email" placeholder="admin@lyka.com" autocomplete="username" required>
+        </div>
+        <div class="form-field">
+          <label for="admin-password">Password</label>
+          <input id="admin-password" name="password" type="password" placeholder="Enter password" autocomplete="current-password" required>
+        </div>
+        <button class="button" type="submit">Sign in</button>
+        <p class="status-message" data-admin-login-status hidden aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="firebase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

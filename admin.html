@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lyka Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <div class="container admin-header__inner">
+      <a class="brand-mark" href="index.html" aria-label="Back to Lyka store">
+        <img src="images/logo.png" alt="Lyka Jewelry logo" width="56" height="56">
+        <span class="brand-mark__text">
+          <strong>LYKA</strong>
+          <span>Product dashboard</span>
+        </span>
+      </a>
+      <div class="admin-header__actions">
+        <a class="button-secondary" href="index.html">View storefront</a>
+        <button class="button" type="button" data-admin-logout>Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container admin-layout">
+    <section class="admin-panel">
+      <div class="section-heading">
+        <h1>Manage products</h1>
+        <p>Add, edit, or delete products. Changes sync to the live storefront automatically.</p>
+      </div>
+      <form class="admin-form" data-product-form>
+        <input type="hidden" name="id">
+        <div class="admin-grid">
+          <div class="form-field">
+            <label for="product-name">Product name</label>
+            <input id="product-name" name="name" type="text" placeholder="Auric Bloom Ring" required>
+          </div>
+          <div class="form-field">
+            <label for="product-category">Collection</label>
+            <select id="product-category" name="category" required>
+              <option value="rings">Rings</option>
+              <option value="chains">Chains</option>
+              <option value="earrings">Earrings</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="product-price">Price (INR)</label>
+            <input id="product-price" name="price" type="number" min="0" step="1" placeholder="1299" required>
+          </div>
+          <div class="form-field">
+            <label for="product-badge">Badge</label>
+            <input id="product-badge" name="badge" type="text" placeholder="Most loved">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="product-description">Short description</label>
+          <textarea id="product-description" name="description" placeholder="Short product summary" required></textarea>
+        </div>
+        <div class="form-field">
+          <label for="product-details">Detailed description</label>
+          <textarea id="product-details" name="details" placeholder="Extended product details" required></textarea>
+        </div>
+        <div class="admin-grid">
+          <div class="form-field">
+            <label for="product-keywords">Keywords</label>
+            <input id="product-keywords" name="keywords" type="text" placeholder="gift, statement, festive">
+          </div>
+          <div class="form-field">
+            <label for="product-materials">Highlights</label>
+            <input id="product-materials" name="materials" type="text" placeholder="Gold-tone finish, Gift-ready">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="product-images">Upload product images</label>
+          <input id="product-images" name="images" type="file" accept="image/*" multiple>
+        </div>
+        <div class="form-field">
+          <label for="product-image-urls">Or paste image URLs</label>
+          <textarea id="product-image-urls" name="imageUrls" placeholder="https://example.com/image-1.jpg, https://example.com/image-2.jpg"></textarea>
+        </div>
+        <div class="admin-preview" data-image-preview></div>
+        <div class="form-actions">
+          <button class="button" type="submit">Save product</button>
+          <button class="button-secondary" type="button" data-reset-form>Clear form</button>
+        </div>
+        <p class="status-message" data-product-status hidden aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="admin-panel">
+      <div class="section-heading">
+        <h2>Catalog</h2>
+        <p>Tap a product to edit it, or remove it from the live store.</p>
+      </div>
+      <div class="admin-product-list" data-admin-product-list></div>
+    </section>
+  </main>
+
+  <script src="firebase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

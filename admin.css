@@ -1,0 +1,140 @@
+.admin-body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(198, 161, 91, 0.18), transparent 24%),
+    linear-gradient(180deg, #fff8f1 0%, #f6ecdf 100%);
+}
+
+.admin-auth-shell,
+.admin-layout {
+  min-height: 100vh;
+}
+
+.admin-auth-shell {
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.admin-auth-card,
+.admin-panel {
+  border: 1px solid rgba(95, 23, 32, 0.12);
+  border-radius: 1.5rem;
+  background: rgba(255, 253, 249, 0.9);
+  box-shadow: 0 20px 45px rgba(43, 26, 23, 0.08);
+}
+
+.admin-auth-card {
+  width: min(100%, 520px);
+  padding: 2rem;
+}
+
+.admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(95, 23, 32, 0.08);
+  background: rgba(255, 249, 243, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.admin-header__inner,
+.admin-header__actions,
+.admin-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-header__inner {
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.admin-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  padding: 2rem 0 3rem;
+}
+
+.admin-panel {
+  padding: 1.5rem;
+}
+
+.admin-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-preview {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+}
+
+.admin-preview img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(95, 23, 32, 0.12);
+}
+
+.admin-product-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-card {
+  padding: 1rem;
+  border: 1px solid rgba(95, 23, 32, 0.12);
+  border-radius: 1rem;
+  background: rgba(255, 253, 249, 0.96);
+}
+
+.admin-card__row,
+.admin-card__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.admin-card__thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 0.85rem;
+}
+
+.admin-card h3,
+.admin-card p {
+  margin: 0;
+}
+
+.admin-card__actions {
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-grid,
+  .admin-header__inner,
+  .admin-header__actions {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

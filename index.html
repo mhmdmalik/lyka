@@ -2,52 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Lyka Store</title>
-  <link rel="icon" href="images/8.png" class="logo-top">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lyka Jewelry | Handcrafted Rings, Chains and Earrings</title>
+
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-bar">
 
-<header>
-  <img src="images/logo.png" class="logo">
-  <h1>LYKA</h1>
-  <p>Elegance Crafted with Love</p>
-  <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="collections.html">Collections</a></li>
-  </ul>
-</nav>
-</header>
+      <a class="brand-mark" href="index.html">
+        <img src="images/logo.png" alt="Lyka logo" width="56" height="56">
+        <span>
+          <strong>LYKA</strong>
+          <small>Elegance crafted at home</small>
+        </span>
+      </a>
 
-<section class="about">
-  <h2>About Us</h2>
-  <p>
-    We design timeless jewelry pieces that blend elegance, tradition, and modern style.
-    Each piece is crafted to celebrate beauty and confidence.
-  </p>
-</section>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Shop</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-<section class="gallery">
-  <h2>Our Collection</h2>
-  <div class="items">
-    <img src="images/1.jpeg">
-    <img src="images/2.jpeg">
-    <img src="images/3.jpeg">
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <!-- TEXT -->
+        <div class="hero-copy">
+          <span class="eyebrow">Handcrafted jewelry</span>
+
+          <h1>Elegant pieces that feel personal and easy to wear</h1>
+
+          <p>
+            Discover refined rings, chains, and earrings designed for
+            everyday elegance and gifting.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="collections.html">Shop Now</a>
+            <a class="button-secondary" href="#contact">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="hero-media">
+          <img 
+            src="images/chain.jpeg" 
+            alt="Gold chain jewelry"
+            class="hero-image"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section>
+      <div class="container">
+        <h2>Featured categories</h2>
+        <div class="product-grid" data-featured-products></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section>
+      <div class="container">
+        <h2>About Lyka</h2>
+        <p>
+          A home-based jewelry brand focused on elegant, lightweight pieces
+          for everyday styling and gifting.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+  <div class="container">
+
+    <div class="contact-box">
+      
+      <h2>Contact Lyka</h2>
+      <p class="contact-subtext">
+        Ask about custom orders, gifting, or product availability.
+      </p>
+
+      <form class="contact-form" action="#" method="post">
+
+        <div class="form-row">
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Your name" 
+            required
+          >
+
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Your email" 
+            required
+          >
+        </div>
+
+        <textarea 
+          name="message" 
+          placeholder="Your message"
+          rows="4"
+          required
+        ></textarea>
+
+        <button type="submit" class="button">
+          Send Message
+        </button>
+
+      </form>
+
+      <div class="contact-extra">
+        <p>Or reach out directly:</p>
+
+        <div class="contact-links">
+          <a href="https://www.instagram.com/lyka.jewels/" target="_blank">
+            Instagram
+          </a>
+          <a href="https://chat.whatsapp.com/FA4NXRc6CpJ8YYQOVyMea0" target="_blank">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
+</main>
 
-<section class="contact">
-  <h2>Contact Us</h2>
-  <a href="https://chat.whatsapp.com/FA4NXRc6CpJ8YYQOVyMea0">📱 WhatsApp</a>
-  <a href="https://www.instagram.com/lyka.jewels/">📸 Instagram</a>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Lyka Jewelry</p>
+    </div>
+  </footer>
 
-<footer>
-  © 2025 Your Jewelry Brand
-</footer>
+  <!-- SCRIPTS -->
+  <script src="firebase-config.js" defer></script>
+  <script src="app.js" defer></script>
 
 </body>
 </html>
