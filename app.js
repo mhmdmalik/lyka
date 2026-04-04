@@ -9,11 +9,12 @@ const FALLBACK_PRODUCTS = [
     details: "Lightweight ring crafted for comfortable all-day wear with a refined, giftable silhouette.",
     keywords: ["ring", "gift", "statement", "floral"],
     materials: ["Gold-tone finish", "Statement styling", "Gift-ready"],
-    cover: "images/rings.jpeg",
+    cover: "images/ring1.jpeg",
     gallery: [
-      { src: "images/rings.jpeg", alt: "Lyka statement ring with floral detailing" },
-      { src: "images/1.jpeg", alt: "Lyka jewelry styling flat lay with ring accents" },
-      { src: "images/2.jpeg", alt: "Close-up jewelry styling for Lyka ring collection" }
+      { src: "images/ring1.jpeg", alt: "Lyka statement ring with floral detailing" },
+      { src: "images/ring2.jpeg", alt: "Lyka jewelry styling flat lay with ring accents" },
+      { src: "images/ring3.jpeg", alt: "Close-up jewelry styling for Lyka ring collection" },
+      { src: "images/ring4.jpeg", alt: "Close-up jewelry styling for Lyka ring collection" }
     ]
   },
   {
