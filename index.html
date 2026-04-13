@@ -12,7 +12,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
 </head>
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
 
+function showSlide() {
+  slides.forEach(slide => slide.classList.remove("active"));
+
+  index = (index + 1) % slides.length;
+
+  slides[index].classList.add("active");
+}
+
+setInterval(showSlide, 3000); // change every 3 sec
+</script>
 <body>
 
   <!-- HEADER -->
@@ -64,12 +77,16 @@
 
         <!-- IMAGE -->
         <div class="hero-media">
-          <img 
-            src="images/chain.jpeg" 
-            alt="Gold chain jewelry"
-            class="hero-image"
-          >
-        </div>
+
+        <div class="slideshow">
+
+        <img src="images/1.jpeg" class="slide active">
+        <img src="images/2.jpeg" class="slide">
+        <img src="images/3.jpeg" class="slide">
+
+         </div>
+
+</div>
 
       </div>
     </section>
@@ -104,36 +121,48 @@
         Ask about custom orders, gifting, or product availability.
       </p>
 
-      <form class="contact-form" action="#" method="post">
+ <form class="contact-form"
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfv-Zv23iO66ekXWBGufP407MuWLqw6cZagtHA1vc5J4hTUmg/formResponse"
+      method="POST"
+      target="hidden_iframe">
 
-        <div class="form-row">
-          <input 
-            type="text" 
-            name="name" 
-            placeholder="Your name" 
-            required
-          >
+  <div class="form-row">
+    <input 
+      type="text" 
+      name="entry.601090301"
+      placeholder="Your name" 
+      required
+    >
 
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Your email" 
-            required
-          >
-        </div>
+    <input 
+      type="email" 
+      name="entry.1735114164"
+      placeholder="Your email" 
+      required
+    >
+  </div>
 
-        <textarea 
-          name="message" 
-          placeholder="Your message"
-          rows="4"
-          required
-        ></textarea>
+  <textarea 
+    name="entry.1908031298"
+    placeholder="Your message"
+    rows="4"
+    required
+  ></textarea>
+<script>
+document.querySelector(".contact-form").addEventListener("submit", function() {
+  setTimeout(() => {
+    alert("Thank you! Lyka will contact you soon 💎");
+  }, 500);
+});
+</script>
+  <button type="submit" class="button">
+    Send Message
+  </button>
 
-        <button type="submit" class="button">
-          Send Message
-        </button>
+</form>
 
-      </form>
+<!-- Prevent redirect -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
       <div class="contact-extra">
         <p>Or reach out directly:</p>

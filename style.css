@@ -158,6 +158,32 @@ button {
   text-decoration: none;
   font-weight: 500;
 }
+.hero-media {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.slideshow {
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 12px;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
 .hero-image {
   width: 100%;
   height: auto;
