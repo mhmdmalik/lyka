@@ -66,6 +66,7 @@ No backend or database — purely static, blazing fast, and easy to host.
 
    or just double-click `index.html` in your file explorer.
 
+4.Setup firebase credentials for admin login setup
 ---
 
 ## 📷 Screenshots
