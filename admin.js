@@ -259,9 +259,7 @@ function watchProducts() {
 function initAdminLogin() {
   const form = document.querySelector("[data-admin-login]");
   const status = document.querySelector("[data-admin-login-status]");
-  if (!form) {
-    return;
-  }
+  if (!form) return;
 
   adminState.services.authModule.onAuthStateChanged(adminState.auth, (user) => {
     if (user) {
@@ -269,14 +267,15 @@ function initAdminLogin() {
     }
   });
 
+  // Handle standard Email form submission
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    if (!form.reportValidity()) {
+    if (!form.elements.email.value || !form.elements.password.value) {
       adminStatus(status, "Enter a valid username/email and password.");
       return;
     }
-
     try {
+      adminStatus(status, "Signing in...");
       await adminState.services.authModule.signInWithEmailAndPassword(
         adminState.auth,
         form.elements.email.value.trim(),
@@ -284,9 +283,79 @@ function initAdminLogin() {
       );
       redirectTo("admin.html");
     } catch (error) {
-      adminStatus(status, "Login failed. Check your Firebase Auth user and password.");
+      adminStatus(status, "Login failed. Check your credentials.");
     }
   });
+
+  // Google Login
+  const googleBtn = form.querySelector("[data-google-login]");
+  if (googleBtn) {
+    googleBtn.addEventListener("click", async () => {
+      try {
+        adminStatus(status, "Waiting for Google to sign in...");
+        const provider = new adminState.services.authModule.GoogleAuthProvider();
+        await adminState.services.authModule.signInWithPopup(adminState.auth, provider);
+        // Will auto redirect due to onAuthStateChanged
+      } catch (error) {
+        adminStatus(status, "Google sign in was cancelled or failed.");
+      }
+    });
+  }
+
+  // Phone Login Flow
+  const phoneToggleBtn = form.querySelector("[data-phone-toggle]");
+  const emailSection = form.querySelector("#email-section");
+  const phoneSection = form.querySelector("#phone-section");
+  const sendOtpBtn = form.querySelector("[data-send-otp]");
+  const verifyOtpBtn = form.querySelector("[data-verify-otp]");
+  const otpSection = form.querySelector("[data-otp-section]");
+
+  if (phoneToggleBtn && phoneSection) {
+    phoneToggleBtn.addEventListener("click", () => {
+      const isPhoneVisible = !phoneSection.hidden;
+      phoneSection.hidden = isPhoneVisible;
+      emailSection.hidden = !isPhoneVisible;
+      phoneToggleBtn.textContent = isPhoneVisible ? "Switch to Phone Auth" : "Switch to Email Auth";
+    });
+
+    // Setup reCAPTCHA config globally on window so Firebase can find it
+    window.recaptchaVerifier = new adminState.services.authModule.RecaptchaVerifier(adminState.auth, 'recaptcha-container', {
+      'size': 'invisible'
+    });
+
+    sendOtpBtn.addEventListener("click", async () => {
+      const phoneInput = form.elements.phone;
+      if (!phoneInput.value) {
+         adminStatus(status, "Please enter a valid phone number.");
+         return;
+      }
+      try {
+        adminStatus(status, "Sending SMS code...");
+        window.confirmationResult = await adminState.services.authModule.signInWithPhoneNumber(
+          adminState.auth, 
+          phoneInput.value.trim(), 
+          window.recaptchaVerifier
+        );
+        otpSection.hidden = false;
+        sendOtpBtn.hidden = true;
+        adminStatus(status, "SMS Sent! Enter the code below.", "success");
+      } catch (error) {
+        adminStatus(status, "Failed to send SMS. Ensure your domain is authorized in Firebase.");
+      }
+    });
+
+    verifyOtpBtn.addEventListener("click", async () => {
+      const otpInput = form.elements.otp;
+      if (!otpInput.value) return;
+      try {
+        adminStatus(status, "Verifying code...");
+        await window.confirmationResult.confirm(otpInput.value.trim());
+        // Will auto redirect due to onAuthStateChanged
+      } catch (error) {
+        adminStatus(status, "Invalid verification code.");
+      }
+    });
+  }
 }
 
 function initAdminDashboard() {

@@ -22,16 +22,50 @@
         <p>Sign in to manage products, pricing, collections, and images.</p>
       </div>
       <form class="admin-form" data-admin-login>
-        <div class="form-field">
-          <label for="admin-email">Username / Email</label>
-          <input id="admin-email" name="email" type="email" placeholder="admin@lyka.com" autocomplete="username" required>
+        <!-- Email/Password -->
+        <div id="email-section">
+          <div class="form-field">
+            <label for="admin-email">Username / Email</label>
+            <input id="admin-email" name="email" type="email" placeholder="admin@lyka.com" autocomplete="username">
+          </div>
+          <div class="form-field" style="margin-top: 1rem;">
+            <label for="admin-password">Password</label>
+            <input id="admin-password" name="password" type="password" placeholder="Enter password" autocomplete="current-password">
+          </div>
+          <button class="button" type="submit" style="width: 100%; margin-top: 1.5rem;">Sign in with Email</button>
         </div>
-        <div class="form-field">
-          <label for="admin-password">Password</label>
-          <input id="admin-password" name="password" type="password" placeholder="Enter password" autocomplete="current-password" required>
+
+        <!-- Phone -->
+        <div id="phone-section" hidden>
+          <div class="form-field">
+            <label for="admin-phone">Phone Number</label>
+            <input id="admin-phone" name="phone" type="tel" placeholder="+1 234 567 8900" autocomplete="tel">
+          </div>
+          <button class="button" type="button" data-send-otp style="width: 100%; margin-top: 1.5rem;">Send SMS Code</button>
+          
+          <div data-otp-section hidden style="margin-top: 1.5rem;">
+            <div class="form-field">
+              <label for="admin-otp">Verification Code</label>
+              <input id="admin-otp" name="otp" type="text" placeholder="123456">
+            </div>
+            <button class="button" type="button" data-verify-otp style="width: 100%; margin-top: 1rem;">Verify Code</button>
+          </div>
         </div>
-        <button class="button" type="submit">Sign in</button>
-        <p class="status-message" data-admin-login-status hidden aria-live="polite"></p>
+
+        <p class="status-message" data-admin-login-status hidden aria-live="polite" style="margin-top: 1rem;"></p>
+        
+        <div id="recaptcha-container" style="margin-top: 1rem;"></div>
+        
+        <div style="text-align: center; margin: 1.5rem 0; color: #6a5750; display: flex; align-items: center;">
+          <div style="flex: 1; height: 1px; background: rgba(95, 23, 32, 0.12);"></div>
+          <span style="padding: 0 1rem; font-size: 0.9rem;">OR</span>
+          <div style="flex: 1; height: 1px; background: rgba(95, 23, 32, 0.12);"></div>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; flex-direction: column;">
+          <button class="button-secondary" type="button" data-google-login>Sign in with Google</button>
+          <button class="button-secondary" type="button" data-phone-toggle>Switch to Phone Auth</button>
+        </div>
       </form>
     </section>
   </main>
