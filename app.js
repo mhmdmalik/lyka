@@ -1,3 +1,6 @@
+(function () {
+"use strict";
+
 const FALLBACK_PRODUCTS = [
   {
     id: "lyka-rings",
@@ -832,4 +835,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupNewsletterForm();
   setupAnalytics();
   await bootstrapStorefront();
+
+  const slideshowImages = document.querySelectorAll(".slide");
+  if (slideshowImages.length) {
+    let slideIndex = 0;
+    setInterval(() => {
+      slideshowImages.forEach((img) => img.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slideshowImages.length;
+      slideshowImages[slideIndex].classList.add("active");
+    }, 3000);
+  }
+
+  const copyrightText = document.getElementById("copyright-text");
+  if (copyrightText) {
+    copyrightText.textContent = `© ${new Date().getFullYear()} Lyka Jewelry`;
+  }
 });
+})();

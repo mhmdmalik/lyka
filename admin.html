@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lyka Admin Dashboard</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Lyka Jewelry secure admin product dashboard.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="admin.css">
 </head>
@@ -82,8 +84,8 @@
         </div>
         <div class="admin-preview" data-image-preview></div>
         <div class="form-actions">
-          <button class="button" type="submit">Save product</button>
-          <button class="button-secondary" type="button" data-reset-form>Clear form</button>
+          <button class="button" type="submit" id="submit-btn" data-submit-btn>Save product</button>
+          <button class="button-secondary" type="button" data-reset-form>Clear form / Cancel edit</button>
         </div>
         <p class="status-message" data-product-status hidden aria-live="polite"></p>
       </form>

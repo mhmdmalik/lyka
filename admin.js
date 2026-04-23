@@ -106,6 +106,11 @@ function fillProductForm(product) {
   if (preview) {
     preview.innerHTML = (product.gallery || []).map((image) => `<img src="${image.src}" alt="${product.name} preview">`).join("");
   }
+  
+  const submitBtn = document.querySelector("[data-submit-btn]");
+  if (submitBtn) {
+    submitBtn.textContent = "Update product";
+  }
 }
 
 function resetProductForm() {
@@ -121,6 +126,11 @@ function resetProductForm() {
   }
   if (status) {
     status.hidden = true;
+  }
+  
+  const submitBtn = document.querySelector("[data-submit-btn]");
+  if (submitBtn) {
+    submitBtn.textContent = "Save product";
   }
 }
 

@@ -1,2 +1,17 @@
-# Sensitive API Configuration
+# Sensitive Configuration
 firebase-config.js
+.env
+.env.*
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build & Scripts
+seed.mjs
+seed-all.mjs
+test.mjs
+
+# System Files
+.DS_Store
+Thumbs.db

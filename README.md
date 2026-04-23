@@ -26,9 +26,9 @@ This project is a static web application built using **HTML, CSS, and JavaScript
 |----------|
 | HTML      |
 | CSS       |
-| JavaScript|
+| Firebase  |
 
-No backend or database — purely static, blazing fast, and easy to host.
+*The site now leverages a lightweight Firebase integration for a dynamic product catalog, while remaining blazing fast and easy to host.*
 
 ---
 
@@ -38,12 +38,14 @@ No backend or database — purely static, blazing fast, and easy to host.
 
 ├── index.html
 ├── style.css
-├── lightbox.js
-├── collections.html
-├── images/           # Product & gallery images
-└── README.md
-
-````
+├── app.js            # Main storefront logic
+├── admin.html        # Secure backend dashboard
+├── admin.js          # Admin logic & Firebase auth
+├── collections.html  # Dedicated product grid
+├── firebase-config.js # Firebase API keys (Git ignored)
+├── seed.mjs / seed-all.mjs # (Optional) One-time database seeding scripts
+└── images/           # Local product imagery
+```
 
 ---
 
@@ -54,20 +56,28 @@ No backend or database — purely static, blazing fast, and easy to host.
    git clone https://github.com/mhmdmalik/lyka.git
 
 2. Navigate to the folder:
-
    ```bash
    cd lyka
    ```
-3. Open the website in your browser:
 
+3. **Start a local server:** *Because this app dynamically fetches modules and data from Firebase, you cannot just double-click the HTML file.* You must run a local server to bypass browser security restrictions:
+   ```bash
+   npx http-server
    ```
-   open index.html
-   ```
+   Then visit `http://localhost:8080` in your web browser.
 
-   or just double-click `index.html` in your file explorer.
-4.Setup firebase credentials for admin login setup
+4. **Setup Firebase:** Add your Firebase credentials to a local `firebase-config.js` file (which is safely ignored from Git) to enable live product fetching and admin login.
 
 ---
+
+## 🗄️ Database & Seed Scripts
+
+The Lyka storefront now pulls all of its live products directly from a **Firebase Firestore** cloud database!
+
+In the project folder, you may notice files named `seed.mjs` or `seed-all.mjs`. **These are just optional, one-off utility scripts.** We used them strictly to upload the initial batch of products into Firebase from the command line. 
+
+**Does the system need them to work?** 
+Absolutely not! Since your products are now safely living in the cloud, the website communicates directly with Firebase over the internet. You can safely delete these seed files; your site and your admin dashboard will continue to function flawlessly. They only exist purely for convenience if you ever need to bulk-restart or wipe the database in the future.
 
 ## 📷 Screenshots
 
