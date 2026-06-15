@@ -27,20 +27,40 @@
   <header class="site-header">
     <div class="container header-bar">
 
-      <a class="brand-mark" href="index.html">
+      <a class="brand-mark" href="index.html" aria-label="Lyka Jewelry home">
         <img src="images/logo.png" alt="Lyka logo" width="56" height="56">
-        <span>
+        <span class="brand-mark__text">
           <strong>LYKA</strong>
-          <small>Elegance crafted at home</small>
+          <span>Elegance crafted at home</span>
         </span>
       </a>
 
-      <nav class="site-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="collections.html">Shop</a></li>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+        </svg>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li class="dropdown">
+            <a href="collections.html">Shop</a>
+            <div class="dropdown-panel" role="menu" aria-label="Shop categories">
+              <a href="collections.html?category=rings">Rings</a>
+              <a href="collections.html?category=chains">Chains</a>
+              <a href="collections.html?category=earrings">Earrings</a>
+            </div>
+          </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="nav-actions">
+          <button class="button-secondary cart-trigger" type="button" data-open-cart aria-controls="cart-drawer">
+            Cart
+            <span class="cart-count" data-cart-count>0</span>
+          </button>
+        </div>
       </nav>
 
     </div>
@@ -187,6 +207,44 @@
       </a>
     </div>
   </footer>
+
+  <!-- LIGHTBOX & CART OVERLAYS -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" data-lightbox-close tabindex="-1"></div>
+    <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close image viewer">&times;</button>
+      <div class="lightbox__frame">
+        <button class="lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Previous image">&lsaquo;</button>
+        <img class="lightbox__image" id="lightbox-image" src="" alt="Product gallery preview">
+        <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Next image">&rsaquo;</button>
+      </div>
+      <p class="lightbox__caption" id="lightbox-title"></p>
+    </div>
+  </div>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer__backdrop" data-close-cart tabindex="-1"></div>
+    <div class="cart-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <div class="drawer-header">
+        <div>
+          <h2 id="cart-title">Your cart</h2>
+          <p class="footer-note">Stored locally in this browser for now.</p>
+        </div>
+        <button class="icon-button" type="button" data-close-cart aria-label="Close cart">Close</button>
+      </div>
+      <div class="drawer-body" data-cart-items></div>
+      <div class="drawer-summary">
+        <div class="drawer-summary-row">
+          <strong>Subtotal</strong>
+          <strong data-cart-total>INR 0</strong>
+        </div>
+        <div class="drawer-actions">
+          <a class="button" href="index.html#contact">Checkout via inquiry</a>
+          <button class="button-secondary" type="button" data-clear-cart>Clear cart</button>
+        </div>
+      </div>
+    </div>
+  </aside>
 
   <!-- SCRIPTS -->
   <script src="firebase-config.js" defer></script>
